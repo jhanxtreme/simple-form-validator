@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validator - Jhan Mateo (jhaxtreme)</title>
+    <link rel="stylesheet" href="./simple-form-validator.css" />
+</head>
+
+<body>
+    <h1>Simple Form Validator - Demo</h1>
+    <form id="sp-form" novalidate autocomplete="off">
+        <div class="form-input">
+            <input type="text" name="username" id="username" pattern="[a-zA-Z]" placeholder="Username" required />
+        </div>
+        <div class="form-input">
+            <input type="email" name="email" id="email" pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' placeholder="Email" required />
+        </div>
+
+        <div class="form-input">
+            <input type="radio" required name="gender" value="male" />Male
+            <input type="radio" required name="gender" value="female" />Female
+        </div>
+
+        <div class="form-input">
+            <input type="checkbox" required name="skills" value="Skill 1" />Skill 1
+            <input type="checkbox" required name="skills" value="Skill 2" />Skill 2
+        </div>
+
+        <div class="form-input">
+            <select name="job-position" required>
+                <option value="" selected>Select Job Position</option>
+                <option value="it-specialist">IT Specialist</option>
+                <option value="customer-support-specialist">Customer Support</option>
+                <option value="doctor">Doctor</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+
+        <div class="form-input">
+            <textarea name="comments" placeholder="Comments" required></textarea>
+        </div>
+
+        <div class="form-input">
+            <input type="submit" name="submit" value="Submit" />
+        </div>
+
+    </form>
+
+    <script src="./simple-form-validator.js"></script>
+    <script>
+        SimpleFormValidator.init({
+            label: true
+        });
+    </script>
+</body>
+
+</html>
